@@ -11,17 +11,7 @@ export default function RootLayout({
 }: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="pt-BR">
-      <body className='qualquer'>
-        <header>
-          <h1>Header</h1>
-        </header>
-        <div className='bg-red-500'>
-          {children}
-        </div>
-        <footer>
-          <h1>Footer</h1>
-        </footer>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
