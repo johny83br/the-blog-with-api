@@ -19,7 +19,7 @@ export function PostInfo({
 }: PostInfoProps) {
   return (
     <div className='flex flex-col gap-4 sm:justify-center'>
-      <time className='text-slate-600 block text-sm/tight' dateTime={dateTime}>
+      <time className='text-slate-600 block text-sm/tight' title={dateTime}>
         {time}
       </time>
       <PostHeading as={as} url={url}>
