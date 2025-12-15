@@ -21,13 +21,7 @@ export async function PostFeatured() {
           priority: true,
         }}
       />
-      <PostInfo
-        dateTime={formatDistanceToNow(post.createdAt)}
-        time={formatDateTime(post.createdAt)}
-        url={link}
-        title={post.title}
-        as='h1'
-      >
+      <PostInfo dateTime={post.createdAt} url={link} title={post.title} as='h1'>
         {post.excerpt}
       </PostInfo>
     </section>

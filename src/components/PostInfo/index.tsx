@@ -1,7 +1,7 @@
+import { PostDate } from '../PostDate';
 import { PostHeading } from '../PostHeading';
 
 type PostInfoProps = {
-  time: string;
   dateTime: string;
   url: string;
   title: string;
@@ -10,7 +10,6 @@ type PostInfoProps = {
 };
 
 export function PostInfo({
-  time,
   dateTime,
   url,
   title,
@@ -19,9 +18,7 @@ export function PostInfo({
 }: PostInfoProps) {
   return (
     <div className='flex flex-col gap-4 sm:justify-center'>
-      <time className='text-slate-600 block text-sm/tight' title={dateTime}>
-        {time}
-      </time>
+      <PostDate dateTime={dateTime} />
       <PostHeading as={as} url={url}>
         {title}
       </PostHeading>

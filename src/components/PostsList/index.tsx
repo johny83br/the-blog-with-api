@@ -24,8 +24,7 @@ export async function PostsList() {
             />
 
             <PostInfo
-              dateTime={formatDistanceToNow(post.createdAt)}
-              time={formatDateTime(post.createdAt)}
+              dateTime={post.createdAt}
               url={link}
               title={post.title}
               as='h2'
