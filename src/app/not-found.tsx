@@ -6,7 +6,7 @@ export default function NotFoundPage() {
       <title>Página não encontrada | The Blog</title>
       <div
         className={clsx(
-          'min-h-[320px] bg-slate-900 text-slate-100',
+          'min-h-80 bg-slate-900 text-slate-100',
           'mb-16 p-8 rounded-xl',
           'flex items-center justify-center',
           'text-center',
