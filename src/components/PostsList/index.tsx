@@ -1,6 +1,5 @@
 import { PostCoverImage } from '../PostCoverImage';
 import { PostInfo } from '../PostInfo';
-import { formatDateTime, formatDistanceToNow } from '@/utils/format-datetime';
 import { findAllPublicPostsCached } from '@/lib/post/queries';
 
 export async function PostsList() {
