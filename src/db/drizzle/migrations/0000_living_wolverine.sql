@@ -3,7 +3,7 @@ CREATE TABLE `posts` (
 	`slug` text NOT NULL,
 	`title` text NOT NULL,
 	`author` text NOT NULL,
-	`exercpt` text NOT NULL,
+	`excerpt` text NOT NULL,
 	`content` text NOT NULL,
 	`coverImageUrl` text NOT NULL,
 	`published` integer NOT NULL,

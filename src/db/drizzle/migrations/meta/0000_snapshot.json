@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "743f92dd-bc52-45a9-b218-8f00d9e3000e",
+  "id": "cd52be67-17a1-4dde-a18f-e96e24a8eac0",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "posts": {
@@ -35,8 +35,8 @@
           "notNull": true,
           "autoincrement": false
         },
-        "exercpt": {
-          "name": "exercpt",
+        "excerpt": {
+          "name": "excerpt",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
