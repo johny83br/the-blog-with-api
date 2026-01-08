@@ -1,13 +1,15 @@
 import { formatHour } from '@/utils/format-datetime';
 
 // export const dynamic = 'force-dynamic'; // This page always renders on the server as dynamic
-// export const dynamic = 'force-static'; // This page always renders on the server as static
+export const dynamic = 'force-static'; // This page always renders on the server as static
 
-export const dynamicParams = false; // Enable dynamic route segments
+// export const dynamicParams = true; // Enable dynamic route segments
 
-export async function generateStaticParams() {
-  return [{ id: '1' }, { id: '2' }, { id: '3' }];
-}
+export const revalidate = 10; // Revalidate this page every 10 seconds
+
+// export async function generateStaticParams() {
+//   return [{ id: '1' }, { id: '2' }, { id: '3' }];
+// }
 
 export default async function ExemploPage({
   params,
