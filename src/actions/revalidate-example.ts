@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 export async function revalidateExampleAction(formdata: FormData) {
   const path = formdata.get('path') || '';
@@ -9,5 +9,6 @@ export async function revalidateExampleAction(formdata: FormData) {
   // For example, in Next.js you might use:
   console.log('Revalidating example:', path);
 
-  revalidatePath(`${path}`);
+  // revalidatePath(`${path}`);
+  revalidateTag('randomuser', 'max');
 }

@@ -2,13 +2,13 @@ import { revalidateExampleAction } from '@/actions/revalidate-example';
 import { formatHour } from '@/utils/format-datetime';
 
 // export const dynamic = 'force-dynamic'; // This page always renders on the server as dynamic
-export const dynamic = 'force-static'; // This page always renders on the server as static
+// export const dynamic = 'force-static'; // This page always renders on the server as static
 
 // export const dynamicParams = true; // Enable dynamic route segments
 
 // export const revalidate = 10; // Revalidate this page every 10 seconds
 
-export const revalidate = 30;
+// export const revalidate = 30;
 
 // export async function generateStaticParams() {
 //   return [{ id: '1' }, { id: '2' }, { id: '3' }];
@@ -21,11 +21,27 @@ export default async function ExemploPage({
 }) {
   const { id } = await params;
   const hour = formatHour(Date.now());
+  let name = '';
+
+  const response = await fetch('https://randomuser.me/api/?results=1', {
+    next: {
+      tags: ['randomuser'],
+      revalidate: 60,
+    },
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    name = data.results[0].name.first;
+    console.log('Random User:', data.results[0]);
+  } else {
+    console.error('Failed to fetch random user:', response.status);
+  }
 
   return (
     <main className='min-h-[600px] text-4xl font-bold'>
       <div>
-        Hora: {hour} (ID: {id})
+        Nome: {name} | Hora: {hour} | ID: {id}
       </div>
 
       <form action={revalidateExampleAction}>
