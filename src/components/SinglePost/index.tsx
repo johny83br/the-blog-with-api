@@ -19,6 +19,7 @@ export async function SinglePost({ slug }: SinglePostProps) {
           height={720}
           alt={post.title}
           className='rounded-xl'
+          priority={true}
         />
 
         <PostHeading url={`/post/${post.slug}`}>{post.title}</PostHeading>
