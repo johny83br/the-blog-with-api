@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import {
+  CirclePlus,
   CircleXIcon,
   FileTextIcon,
   HouseIcon,
@@ -74,7 +75,7 @@ export function MenuAdmin() {
       </Link>
 
       <Link className={linkClasses} href='/admin/posts/new'>
-        <PlusIcon />
+        <CirclePlus />
         Novo Post
       </Link>
     </nav>
