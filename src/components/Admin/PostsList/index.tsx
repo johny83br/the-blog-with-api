@@ -28,7 +28,7 @@ export default async function PostsListAdmin() {
             !post.published ? 'hover:bg-slate-300' : 'hover:bg-slate-200',
           )}
         >
-          <Link href={`/admin/post/${post.id}`}>{post.title}</Link>
+          <Link href={`/admin/posts/${post.id}`}>{post.title}</Link>
 
           {!post.published && (
             <span className='ml-2 text-xs text-slate-600 italic'>
