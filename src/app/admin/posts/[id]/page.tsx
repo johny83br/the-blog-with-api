@@ -1,5 +1,8 @@
+import NotFoundPage from '@/app/not-found';
 import { ManagePostForm } from '@/components/Admin/ManagePostForm';
 import { Subtitle } from '@/components/Layouts/Subtitle';
+import { makePublicPost } from '@/dto/post/dto';
+import { findPostByIdAdmin } from '@/lib/post/queries/admin';
 import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
@@ -16,11 +19,16 @@ type AdminPostPageProps = {
 
 export default async function AdminPostIdPage({ params }: AdminPostPageProps) {
   const { id } = await params;
+  const post = await findPostByIdAdmin(id).catch();
+
+  if (!post) NotFoundPage();
+
+  const publicPost = makePublicPost(post);
 
   return (
     <>
       <Subtitle>Editar Post</Subtitle>
-      <ManagePostForm />
+      <ManagePostForm publicPost={publicPost} />
     </>
   );
 }
