@@ -7,7 +7,11 @@ import { IMAGE_UPLOAD_MAX_SIZE } from '@/lib/constants';
 import { toast } from 'react-toastify';
 import { UploadImageAction } from '@/actions/upload/upload-image-action';
 
-export function ImageUploader() {
+type ImageProps = {
+  disabled?: boolean;
+};
+
+export function ImageUploader({ disabled = false }: ImageProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUploading, startTransition] = useTransition();
   const [imgUrl, setImgUrl] = useState('');
@@ -66,7 +70,7 @@ export function ImageUploader() {
         className='self-start'
         variant='ghost'
         onClick={handleChooseFiles}
-        disabled={isUploading}
+        disabled={isUploading || disabled}
       >
         <ImageUpIcon />
         Enviar uma imagem
@@ -90,7 +94,7 @@ export function ImageUploader() {
         type='file'
         accept='image/*'
         onChange={handleChange}
-        disabled={isUploading}
+        disabled={isUploading || disabled}
       />
     </div>
   );

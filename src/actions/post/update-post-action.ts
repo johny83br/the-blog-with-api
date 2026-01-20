@@ -1,26 +1,28 @@
 'use server';
 
-import { makePartialPublicPost, PublicPost } from '@/dto/post/dto';
-import { PostCreateSchema } from '@/lib/post/validations';
+import {
+  makePartialPublicPost,
+  makePublicPostFromDb,
+  PublicPost,
+} from '@/dto/post/dto';
+import { PostUpdateSchema } from '@/lib/post/validations';
 import { PostModel } from '@/models/post/post-model';
 import { postRepository } from '@/repositories/post';
 import { asyncDelay } from '@/utils/async-delay';
 import { getZodErrorMessages } from '@/utils/get-zod-error-messages';
-import { makeSlugFromText } from '@/utils/make-slug-from-text';
+import { makeRandomString } from '@/utils/make-random-string';
 import { revalidatePath, revalidateTag } from 'next/cache';
-import { redirect } from 'next/navigation';
-import { v4 as uuidV4 } from 'uuid';
 
-type CreatePostActionState = {
+type UpdatePostActionState = {
   formState: PublicPost;
   errors: string[];
   success?: string;
 };
 
-export async function CreatePostAction(
-  prevState: CreatePostActionState,
+export async function UpdatePostAction(
+  prevState: UpdatePostActionState,
   formData: FormData,
-): Promise<CreatePostActionState> {
+): Promise<UpdatePostActionState> {
   await asyncDelay(5000);
 
   // TODO: verificar se o usuário está logado
@@ -32,9 +34,18 @@ export async function CreatePostAction(
     };
   }
 
+  const id = formData.get('id')?.toString() || '';
+
+  if (!id || typeof id !== 'string') {
+    return {
+      formState: prevState.formState,
+      errors: ['ID inválido'],
+    };
+  }
+
   const formDataToObj = Object.fromEntries(formData.entries());
 
-  const zodParsedObject = PostCreateSchema.safeParse(formDataToObj);
+  const zodParsedObject = PostUpdateSchema.safeParse(formDataToObj);
 
   if (!zodParsedObject.success) {
     const msgErrors = getZodErrorMessages(zodParsedObject.error);
@@ -47,29 +58,32 @@ export async function CreatePostAction(
   const validPostData = zodParsedObject.data;
   const newPost: PostModel = {
     ...validPostData,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    id: uuidV4(),
-    slug: makeSlugFromText(validPostData.title),
   };
 
+  let post;
+
   try {
-    await postRepository.create(newPost);
+    post = await postRepository.update(id, newPost);
   } catch (error: unknown) {
     if (error instanceof Error) {
       return {
-        formState: newPost,
+        formState: makePartialPublicPost(formDataToObj),
         errors: [error.message],
       };
     }
     return {
-      formState: newPost,
+      formState: makePartialPublicPost(formDataToObj),
       errors: ['Erro desconhecido'],
     };
   }
 
   revalidateTag('posts', 'seconds');
+  revalidateTag(`post-${post.slug}`, 'seconds');
   revalidatePath('/admin/posts');
 
-  redirect(`/admin/posts/${newPost.id}?created=1`);
+  return {
+    formState: makePublicPostFromDb(post),
+    errors: [],
+    success: makeRandomString(),
+  };
 }

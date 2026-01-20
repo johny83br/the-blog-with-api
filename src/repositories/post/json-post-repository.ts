@@ -14,6 +14,15 @@ const JSON_POSTS_FILE_PATH = resolve(
 );
 
 export class JsonPostRepository implements PostRepository {
+  create(post: PostModel): Promise<PostModel> {
+    throw new Error('Method not implemented.');
+  }
+  update(
+    id: string,
+    newPostData: Omit<PostModel, 'id' | 'slug' | 'createdAt' | 'updatedAt'>,
+  ): Promise<PostModel> {
+    throw new Error('Method not implemented.');
+  }
   private async simulateWait() {
     if (SIMULATE_WAIT_IN_MS <= 0) return;
 
@@ -56,10 +65,12 @@ export class JsonPostRepository implements PostRepository {
     return post;
   }
 
-  async deleteById(id: string): Promise<void> {
+  async delete(id: string): Promise<PostModel> {
     const posts = await this.findAllPublic();
     const post = posts.find(post => post.id === id);
 
     if (!post) throw new Error('Post não encontrado para o ID: ' + id);
+
+    return post;
   }
 }

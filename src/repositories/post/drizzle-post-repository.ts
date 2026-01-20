@@ -61,10 +61,67 @@ export class DrizzlePostRepository implements PostRepository {
 
     return post;
   }
-  async deleteById(id: string): Promise<void> {
+  async delete(id: string): Promise<PostModel> {
+    const postExists = await drizzleDb.query.posts.findFirst({
+      where: (posts, { eq }) => eq(posts.id, id),
+    });
+
+    if (!postExists) {
+      throw new Error('Post não existe');
+    }
+
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(formatHour(Date.now()), 'deleteById: Deletando post por ID');
+    logColor(formatHour(Date.now()), 'delete: Deletando post por ID');
 
     await drizzleDb.delete(postsTable).where(eq(postsTable.id, id));
+
+    return postExists;
+  }
+  async create(post: PostModel): Promise<PostModel> {
+    const postExists = drizzleDb.query.posts.findFirst({
+      where: (posts, { or, eq }) =>
+        or(eq(posts.id, post.id), eq(posts.slug, post.slug)),
+      columns: { id: true },
+    });
+
+    if (!postExists) {
+      throw new Error('Post com ID ou Slug já existe na base de dados');
+    }
+
+    logColor(formatHour(Date.now()), `create: Criado o post com ID ${post.id}`);
+    await drizzleDb.insert(postsTable).values(post);
+    return post;
+  }
+  async update(
+    id: string,
+    newPostData: Omit<PostModel, 'id' | 'slug' | 'createdAt' | 'updatedAt'>,
+  ): Promise<PostModel> {
+    const oldPost = await drizzleDb.query.posts.findFirst({
+      where: (posts, { eq }) => eq(posts.id, id),
+    });
+
+    if (!oldPost) {
+      throw new Error('Post não existe');
+    }
+
+    const updatedAt = new Date().toISOString();
+    const postData = {
+      author: newPostData.author,
+      content: newPostData.content,
+      coverImageUrl: newPostData.coverImageUrl,
+      excerpt: newPostData.excerpt,
+      published: newPostData.published,
+      title: newPostData.title,
+      updatedAt,
+    };
+    await drizzleDb
+      .update(postsTable)
+      .set(postData)
+      .where(eq(postsTable.id, id));
+
+    return {
+      ...oldPost,
+      ...postData,
+    };
   }
 }

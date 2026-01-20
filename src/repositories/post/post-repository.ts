@@ -5,5 +5,11 @@ export interface PostRepository {
   findBySlugPublic(slug: string): Promise<PostModel>;
   findAll(): Promise<PostModel[]>;
   findById(id: string): Promise<PostModel>;
-  deleteById(id: string): Promise<void>;
+
+  delete(id: string): Promise<PostModel>;
+  create(post: PostModel): Promise<PostModel>;
+  update(
+    id: string,
+    newPostData: Omit<PostModel, 'id' | 'slug' | 'createdAt' | 'updatedAt'>,
+  ): Promise<PostModel>;
 }

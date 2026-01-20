@@ -12,7 +12,7 @@ export default async function AdminPostNewPage() {
   return (
     <>
       <Subtitle>Criar Post</Subtitle>
-      <ManagePostForm />
+      <ManagePostForm mode='create' />
     </>
   );
 }

@@ -12,20 +12,28 @@ export async function DeletePostAction(id: string) {
 
   //TODO: Checar login do usuário
 
-  const post = await postRepository.findById(id).catch(() => undefined);
+  let post;
 
-  if (!post) {
-    throw new Error('Post não encontrado ou já foi deletado.');
+  try {
+    post = await postRepository.delete(id);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: 'Erro desconhecido',
+    };
   }
 
-  await postRepository.deleteById(id);
-
-  // TODO: revalidateTag ou revalidatePath se necessário
   revalidateTag('posts', 'seconds');
   revalidateTag(`post-${post.slug}`, 'seconds');
   revalidatePath('/admin/posts');
 
   logColor(formatHour(Date.now()), `Post com ID ${id} deletado.`);
 
-  return id;
+  return {
+    error: '',
+  };
 }

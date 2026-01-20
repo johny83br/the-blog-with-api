@@ -8,9 +8,25 @@ const nextConfig: NextConfig = {
   // output: 'export',
   // basePath: '/blog-ssg-nextjs',
   // assetPrefix: '/blog-ssg-nextjs',
-  // images: {
-  //   unoptimized: true,
-  // },
+  images: {
+    //   unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+        search: '',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+        search: '',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

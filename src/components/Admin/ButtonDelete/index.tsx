@@ -25,13 +25,14 @@ export function ButtonDeleteAdmin({ id, title }: DeleteButtonProps) {
 
     startTransition(async () => {
       setShowDialog(false);
-      try {
-        await DeletePostAction(id);
-        toast.success('Post apagado com sucesso!');
-      } catch (error) {
-        toast.error(error instanceof Error ? error.message : String(error));
+      const result = await DeletePostAction(id);
+
+      if (result.error) {
+        toast.error(result.error);
         return;
       }
+
+      toast.success('Post apagado com sucesso!');
     });
   }
 
