@@ -8,9 +8,9 @@ import {
 import { PostUpdateSchema } from '@/lib/post/validations';
 import { PostModel } from '@/models/post/post-model';
 import { postRepository } from '@/repositories/post';
-import { asyncDelay } from '@/utils/async-delay';
 import { getZodErrorMessages } from '@/utils/get-zod-error-messages';
 import { makeRandomString } from '@/utils/make-random-string';
+import { makeSlugFromText } from '@/utils/make-slug-from-text';
 import { revalidatePath, revalidateTag } from 'next/cache';
 
 type UpdatePostActionState = {
@@ -23,8 +23,6 @@ export async function UpdatePostAction(
   prevState: UpdatePostActionState,
   formData: FormData,
 ): Promise<UpdatePostActionState> {
-  await asyncDelay(5000);
-
   // TODO: verificar se o usuário está logado
 
   if (!(formData instanceof FormData)) {
@@ -56,7 +54,7 @@ export async function UpdatePostAction(
   }
 
   const validPostData = zodParsedObject.data;
-  const newPost: PostModel = {
+  const newPost: Omit<PostModel, 'id' | 'slug' | 'createdAt' | 'updatedAt'> = {
     ...validPostData,
   };
 

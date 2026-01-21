@@ -1,8 +1,6 @@
 'use server';
 
 import { postRepository } from '@/repositories/post';
-import { formatHour } from '@/utils/format-datetime';
-import { logColor } from '@/utils/log-color';
 import { revalidatePath, revalidateTag } from 'next/cache';
 
 export async function DeletePostAction(id: string) {
@@ -30,8 +28,6 @@ export async function DeletePostAction(id: string) {
   revalidateTag('posts', 'seconds');
   revalidateTag(`post-${post.slug}`, 'seconds');
   revalidatePath('/admin/posts');
-
-  logColor(formatHour(Date.now()), `Post com ID ${id} deletado.`);
 
   return {
     error: '',

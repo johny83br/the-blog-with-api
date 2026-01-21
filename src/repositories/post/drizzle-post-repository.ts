@@ -1,8 +1,6 @@
 import { PostModel } from '@/models/post/post-model';
 import { PostRepository } from './post-repository';
 import { drizzleDb } from '@/db/drizzle';
-import { logColor } from '@/utils/log-color';
-import { formatHour } from '@/utils/format-datetime';
 import { asyncDelay } from '@/utils/async-delay';
 import { SIMULATE_WAIT_IN_MS } from '@/lib/constants';
 import { postsTable } from '@/db/drizzle/schemas';
@@ -11,10 +9,6 @@ import { eq } from 'drizzle-orm';
 export class DrizzlePostRepository implements PostRepository {
   async findAllPublic(): Promise<PostModel[]> {
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(
-      formatHour(Date.now()),
-      'findAllPublic: Executando consulta de posts públicos',
-    );
 
     return await drizzleDb.query.posts.findMany({
       where: (posts, { eq }) => eq(posts.published, true),
@@ -23,10 +17,6 @@ export class DrizzlePostRepository implements PostRepository {
   }
   async findBySlugPublic(slug: string): Promise<PostModel> {
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(
-      formatHour(Date.now()),
-      'findBySlugPublic: Executando consulta de posts públicos por slug',
-    );
 
     const post = await drizzleDb.query.posts.findFirst({
       where: (posts, { eq, and }) =>
@@ -39,20 +29,12 @@ export class DrizzlePostRepository implements PostRepository {
   }
   async findAll(): Promise<PostModel[]> {
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(
-      formatHour(Date.now()),
-      'findAll: Executando consulta de todos os posts',
-    );
     return await drizzleDb.query.posts.findMany({
       orderBy: (posts, { desc }) => desc(posts.createdAt),
     });
   }
   async findById(id: string): Promise<PostModel> {
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(
-      formatHour(Date.now()),
-      'findById: Executando consulta de post por ID',
-    );
     const post = await drizzleDb.query.posts.findFirst({
       where: (posts, { eq }) => eq(posts.id, id),
     });
@@ -71,7 +53,6 @@ export class DrizzlePostRepository implements PostRepository {
     }
 
     await asyncDelay(SIMULATE_WAIT_IN_MS, true);
-    logColor(formatHour(Date.now()), 'delete: Deletando post por ID');
 
     await drizzleDb.delete(postsTable).where(eq(postsTable.id, id));
 
@@ -88,7 +69,6 @@ export class DrizzlePostRepository implements PostRepository {
       throw new Error('Post com ID ou Slug já existe na base de dados');
     }
 
-    logColor(formatHour(Date.now()), `create: Criado o post com ID ${post.id}`);
     await drizzleDb.insert(postsTable).values(post);
     return post;
   }
