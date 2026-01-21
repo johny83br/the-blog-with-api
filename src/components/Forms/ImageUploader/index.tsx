@@ -36,7 +36,7 @@ export function ImageUploader({ disabled = false }: ImageProps) {
     }
 
     if (file.size > IMAGE_UPLOAD_MAX_SIZE) {
-      const readableMaxSize = IMAGE_UPLOAD_MAX_SIZE / 1024;
+      const readableMaxSize = (IMAGE_UPLOAD_MAX_SIZE / 1024).toFixed(2);
       toast.error(`Imagem muito grande. Máx.: ${readableMaxSize}KB`);
       setImgUrl('');
       fileInput.value = '';
