@@ -1,6 +1,6 @@
 'use server';
 
-import { LOGIN_PASS, LOGIN_USER } from '@/lib/constants';
+import { ALLOW_LOGIN, LOGIN_PASS, LOGIN_USER } from '@/lib/constants';
 import { createLoginSession, verifyPassword } from '@/lib/login/manage-login';
 import { asyncDelay } from '@/utils/async-delay';
 import { redirect } from 'next/navigation';
@@ -11,6 +11,13 @@ type LoginActionState = {
 };
 
 export async function LoginAction(state: LoginActionState, formData: FormData) {
+  if (!ALLOW_LOGIN) {
+    return {
+      username: '',
+      error: 'Login não habilitado',
+    };
+  }
+
   await asyncDelay(5000); // Vou manter
 
   if (!(formData instanceof FormData)) {
