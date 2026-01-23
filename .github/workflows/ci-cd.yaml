@@ -1,9 +1,21 @@
-name: cd-theblog-workflow
+name: CI/CD Pipeline
 on:
   push:
     branches:
       - main
 jobs:
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v6
+        with:
+          node-version: latest
+      - run: npm i
+      - run: npm run migrate
+      - run: npm run seed
+      - run: npm run build
+
   deploy:
     runs-on: ubuntu-latest
     steps:
