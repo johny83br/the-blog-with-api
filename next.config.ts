@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   /* Descomentar essa linha para exportar para HTML: */
   /* Para exportar HTML: */
   // output: 'export',
-  basePath: '/theblog',
-  assetPrefix: '/theblog',
+  basePath: '/blog-ssg-nextjs',
+  // assetPrefix: '/blog-ssg-nextjs',
   images: {
     //   unoptimized: true,
     remotePatterns: [
@@ -25,6 +25,18 @@ const nextConfig: NextConfig = {
         port: '3000',
         pathname: '/**',
         search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'labs.ninja.dev.br',
+        pathname: '/**',
+        search: '', // Only allow URLs with exactly '?v=2'
+      },
+      {
+        protocol: 'http',
+        hostname: 'labs.ninja.dev.br',
+        pathname: '/**',
+        search: '', // Only allow URLs with exactly '?v=2'
       },
     ],
   },
