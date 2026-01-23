@@ -77,10 +77,10 @@ export function MenuAdmin() {
         )}
       </button>
 
-      <a className={linkClasses} href='/' target='_blank'>
+      <Link className={linkClasses} href='/' target='_blank'>
         <HouseIcon />
         Home
-      </a>
+      </Link>
 
       <Link className={linkClasses} href='/admin/posts'>
         <FileTextIcon />
