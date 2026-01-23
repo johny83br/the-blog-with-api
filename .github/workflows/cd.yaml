@@ -21,7 +21,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem jonata@labs.ninja.dev.br <<EOF
             # Your server commands go here. Replace these commands with those relevant to your project.
 
-            echo "Deploying application..."
+            echo "Deploying application...."
           EOF
 
           rm -f private_key.pem # Remove the private key file after use for security
