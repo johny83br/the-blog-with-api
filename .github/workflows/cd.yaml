@@ -1,4 +1,4 @@
-name: ci-theblog-workflow
+name: cd-theblog-workflow
 on:
   push:
     branches:
@@ -8,24 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 # Check out your repository code
+        uses: actions/checkout@v4 # Check out your repository code
 
-      - name: SSH and run commands
-        env:
-          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} # Reference the private key stored in GitHub Secrets
-        run: |
-          echo "$PRIVATE_KEY" > private_key.pem # Write the private key to a file
-          chmod 600 private_key.pem # Set the appropriate permissions for the key file
-
-          # Establish an SSH connection and execute commands on the remote server
-          ssh -o StrictHostKeyChecking=no -i private_key.pem jonata@labs.ninja.dev.br <<EOF
-            # Your server commands go here. Replace these commands with those relevant to your project.
-
-            echo "Deploying application..."
-          EOF
-
-          rm -f private_key.pem # Remove the private key file after use for security
-    permissions:
-      contents: read
-      actions: write
-      id-token: write
+      - name: Deploy using SSH action
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCP_IP }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Commands to execute on the remote VM
+            echo "Deployment complete"
