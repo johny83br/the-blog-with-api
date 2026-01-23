@@ -100,8 +100,8 @@ sudo nano /etc/nginx/sites-available/theblog.otaviomiranda.com.br
 Edita os dados abaixo:\
 `theblog.otaviomiranda.com.br`\
 Se você mudou a porta da aplicação, mude `3000` para o número que escolheu.
-Também ajuste os caminhos `/home/luizotavio/theblog/public/` e
-`/home/luizotavio/theblog/public/uploads/`
+Também ajuste os caminhos `/home/jonata/theblog/public/` e
+`/home/jonata/theblog/public/uploads/`
 
 ```
 server {
@@ -114,12 +114,12 @@ server {
 
   # Servir arquivos estáticos do /public
   location /public/ {
-    alias /home/luizotavio/theblog/public/;
+    alias /home/jonata/theblog/public/;
   }
 
   # Servir arquivos estáticos do /public
   location /uploads/ {
-    alias /home/luizotavio/theblog/public/uploads/;
+    alias /home/jonata/theblog/public/uploads/;
   }
 
   # Resto do tráfego passa pro app Node (Next.js)
@@ -153,7 +153,7 @@ pasta sites-enabled (é ela que ativa os sites):
 
 ```sh
 sudo rm /etc/nginx/sites-enabled/default # Apaga o site default que o nginx ativou
-sudo ln -s /etc/nginx/sites-available/theblog.otaviomiranda.com.br /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/lab.ninja.dev.br /etc/nginx/sites-enabled/
 sudo nginx -t # confere se está tudo certo
 sudo systemctl reload nginx
 ```
@@ -175,11 +175,11 @@ para seu nome de usuário:
 
 ```sh
 sudo chmod o+x /home # primeiro na home (até chegar em uploads)
-sudo chmod o+x /home/luizotavio
-sudo chmod o+x /home/luizotavio/theblog
-sudo chmod o+x /home/luizotavio/theblog/public
+sudo chmod o+x /home/jonata
+sudo chmod o+x /home/jonata/theblog
+sudo chmod o+x /home/jonata/theblog/public
 # só aqui fiz recursão para evitar mudar todos os arquivos do projeto
-sudo chmod -R o+rx /home/luizotavio/theblog/public/uploads
+sudo chmod -R o+rx /home/jonata/theblog/public/uploads
 ```
 
 Agora vamos usar o pm2 para manter o app sempre aberto e iniciando junto com o
@@ -217,7 +217,7 @@ server {
   server_name theblog.otaviomiranda.com.br;
 
   # (opcional) Define o caminho raiz do projeto – Next.js não usa diretamente, mas não atrapalha
-  root /home/luizotavio/theblog;
+  root /home/jonata/theblog;
 
   # Desativa buffer de proxy – necessário para funcionar corretamente o Streaming e Suspense no Next.js
   proxy_buffering off;
@@ -289,12 +289,12 @@ server {
 
   # Arquivos públicos acessíveis diretamente, como imagens
   location /public/ {
-    alias /home/luizotavio/theblog/public/;
+    alias /home/jonata/theblog/public/;
   }
 
   # Pasta de uploads – acessível diretamente. IMPORTANTE: qualquer rota "/uploads" do Next será ignorada
   location /uploads/ {
-    alias /home/luizotavio/theblog/public/uploads/;
+    alias /home/jonata/theblog/public/uploads/;
   }
 
   # Todas as outras rotas passam para o servidor Next.js (SSR)
@@ -350,8 +350,8 @@ Cola isso no arquivo ajustando os caminhos para seu servidor
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-echo "cd /home/luizotavio/theblog"
-cd /home/luizotavio/theblog
+echo "cd /home/jonata/theblog"
+cd /home/jonata/theblog
 echo
 
 echo "Executando: git pull origin main"

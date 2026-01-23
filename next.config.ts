@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   /* Descomentar essa linha para exportar para HTML: */
   /* Para exportar HTML: */
   // output: 'export',
-  // basePath: '/blog-ssg-nextjs',
-  // assetPrefix: '/blog-ssg-nextjs',
+  basePath: '/theblog',
+  assetPrefix: '/theblog',
   images: {
     //   unoptimized: true,
     remotePatterns: [
