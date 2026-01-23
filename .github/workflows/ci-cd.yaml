@@ -17,6 +17,7 @@ jobs:
       - run: npm run build
 
   deploy:
+    needs: check-application
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
