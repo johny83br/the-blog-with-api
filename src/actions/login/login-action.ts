@@ -1,11 +1,12 @@
 'use server';
 
-import { ALLOW_LOGIN, LOGIN_PASS, LOGIN_USER } from '@/lib/constants';
-import { verifyPassword } from '@/lib/login/manage-login';
+import { ALLOW_LOGIN } from '@/lib/constants';
+import { createLoginSessionFromApi } from '@/lib/login/manage-login';
 import { LoginSchema } from '@/lib/login/schemas';
 import { apiRequest } from '@/utils/api-request';
 import { asyncDelay } from '@/utils/async-delay';
 import { getZodErrorMessages } from '@/utils/get-zod-error-messages';
+import { redirect } from 'next/navigation';
 
 type LoginActionState = {
   email: string;
@@ -68,14 +69,9 @@ export async function LoginAction(state: LoginActionState, formData: FormData) {
     };
   }
 
-  console.log(loginResponse.data);
+  const accessToken = loginResponse.data.accessToken;
 
-  // await createLoginSession(email);
+  await createLoginSessionFromApi(accessToken);
 
-  // redirect('/admin/posts');
-
-  return {
-    email: formEmail,
-    errors: ['Success'],
-  };
+  redirect('/admin/posts');
 }
