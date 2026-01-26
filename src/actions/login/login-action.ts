@@ -1,20 +1,22 @@
 'use server';
 
 import { ALLOW_LOGIN, LOGIN_PASS, LOGIN_USER } from '@/lib/constants';
-import { createLoginSession, verifyPassword } from '@/lib/login/manage-login';
+import { verifyPassword } from '@/lib/login/manage-login';
+import { LoginSchema } from '@/lib/login/schemas';
+import { apiRequest } from '@/utils/api-request';
 import { asyncDelay } from '@/utils/async-delay';
-import { redirect } from 'next/navigation';
+import { getZodErrorMessages } from '@/utils/get-zod-error-messages';
 
 type LoginActionState = {
-  username: string;
-  error: string;
+  email: string;
+  errors: string[];
 };
 
 export async function LoginAction(state: LoginActionState, formData: FormData) {
   if (!ALLOW_LOGIN) {
     return {
-      username: '',
-      error: 'Login não habilitado',
+      email: '',
+      errors: ['Login não habilitado'],
     };
   }
 
@@ -22,32 +24,58 @@ export async function LoginAction(state: LoginActionState, formData: FormData) {
 
   if (!(formData instanceof FormData)) {
     return {
-      username: '',
-      error: 'Dados inválidos',
+      email: '',
+      errors: ['Dados inválidos'],
     };
   }
 
-  const username = formData.get('username')?.toString() || '';
+  const email = formData.get('email')?.toString() || '';
   const password = formData.get('password')?.toString() || '';
 
-  if (!username || !password) {
+  if (!email || !password) {
     return {
-      username,
-      error: 'Digite o usuário e a senha',
+      email,
+      errors: ['Digite o usuário e a senha'],
     };
   }
 
-  const isUsernameValid = username === LOGIN_USER;
-  const isPasswordValid = await verifyPassword(password, LOGIN_PASS);
+  const formObj = Object.fromEntries(formData.entries());
+  const formEmail = formObj?.email?.toString() || '';
+  const parsedFormData = LoginSchema.safeParse(formObj);
 
-  if (!isUsernameValid || !isPasswordValid) {
+  if (!parsedFormData.success) {
     return {
-      username,
-      error: 'Usuário ou senha inválidos',
+      email: formEmail,
+      errors: getZodErrorMessages(parsedFormData.error),
     };
   }
 
-  await createLoginSession(username);
+  const loginResponse = await apiRequest<{ accessToken: string }>(
+    '/auth/login',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(parsedFormData.data),
+    },
+  );
 
-  redirect('/admin/posts');
+  if (!loginResponse.success) {
+    return {
+      email: formEmail,
+      errors: loginResponse.errors,
+    };
+  }
+
+  console.log(loginResponse.data);
+
+  // await createLoginSession(email);
+
+  // redirect('/admin/posts');
+
+  return {
+    email: formEmail,
+    errors: ['Success'],
+  };
 }
