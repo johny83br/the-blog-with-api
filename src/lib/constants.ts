@@ -25,3 +25,5 @@ export const LOGIN_COOKIE_NAME =
   process.env.LOGIN_COOKIE_NAME || 'loginSession';
 
 export const ALLOW_LOGIN = Boolean(Number(process.env.ALLOW_LOGIN)) || false;
+
+export const API_URL = process.env.API_URL || 'http://localhost:3001';
