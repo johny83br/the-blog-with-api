@@ -1,9 +1,11 @@
 'use client';
 
-import { updateUserAction } from '@/actions/user/update-user-action';
+import { DeleteUserAction } from '@/actions/user/delete-user-action';
+import { UpdateUserAction } from '@/actions/user/update-user-action';
 import { Button } from '@/components/Forms/Button';
 import { InputText } from '@/components/Forms/InputText';
 import { Dialog } from '@/components/Others/Dialog';
+import { deleteLoginSession } from '@/lib/login/manage-login';
 
 import { PublicUserDto } from '@/lib/user/schemas';
 import { asyncDelay } from '@/utils/async-delay';
@@ -18,7 +20,7 @@ type UpdateUserFormProps = {
 };
 
 export function UpdateUserForm({ user }: UpdateUserFormProps) {
-  const [state, action, isPending] = useActionState(updateUserAction, {
+  const [state, action, isPending] = useActionState(UpdateUserAction, {
     user,
     errors: [],
     success: false,
@@ -40,7 +42,18 @@ export function UpdateUserForm({ user }: UpdateUserFormProps) {
   }
 
   function handleDeleteUserAccount() {
-    //
+    startTransition(async () => {
+      if (!confirm('Confirma só mais uma vez que quer continuar')) return;
+
+      const result = await DeleteUserAction();
+
+      if (result.errors) {
+        toast.dismiss();
+        result.errors.forEach(e => toast.error(e));
+      }
+
+      setIsDialogVisible(false);
+    });
   }
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 'use client';
 
-import { createUserAction } from '@/actions/user/create-user-action';
+import { CreateUserAction } from '@/actions/user/create-user-action';
 import { Button } from '@/components/Forms/Button';
 import { HoneypotInput } from '@/components/Forms/HoneypotInput';
 import { InputText } from '@/components/Forms/InputText';
@@ -12,7 +12,7 @@ import { useActionState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 export function CreateUserForm() {
-  const [state, action, isPending] = useActionState(createUserAction, {
+  const [state, action, isPending] = useActionState(CreateUserAction, {
     user: PublicUserSchema.parse({}),
     errors: [],
     success: false,

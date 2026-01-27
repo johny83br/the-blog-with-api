@@ -16,7 +16,7 @@ type CreateUserActionState = {
   success: boolean;
 };
 
-export async function createUserAction(
+export async function CreateUserAction(
   state: CreateUserActionState,
   formData: FormData,
 ): Promise<CreateUserActionState> {

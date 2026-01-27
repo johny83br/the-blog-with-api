@@ -17,7 +17,7 @@ type UpdateUserActionState = {
   success: boolean;
 };
 
-export async function updateUserAction(
+export async function UpdateUserAction(
   state: UpdateUserActionState,
   formData: FormData,
 ): Promise<UpdateUserActionState> {
