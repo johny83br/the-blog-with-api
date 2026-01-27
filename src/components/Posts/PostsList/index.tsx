@@ -1,10 +1,23 @@
 import ErrorMessage from '../../Others/ErrorMessage';
 import { PostCoverImage } from '../PostCoverImage';
 import { PostInfo } from '../PostInfo';
-import { findAllPublicPostsCached } from '@/lib/post/queries/public';
+import { findAllPublicPostsApiCached } from '@/lib/post/queries/public';
 
 export async function PostsList() {
-  const posts = await findAllPublicPostsCached();
+  const postsRes = await findAllPublicPostsApiCached();
+
+  const noPostsFound = (
+    <ErrorMessage
+      contentTitle='Ops! 😅'
+      content='Ainda não criamos nenhum post'
+    />
+  );
+
+  if (!postsRes.success) {
+    return noPostsFound;
+  }
+
+  const posts = postsRes.data;
 
   if (posts.length <= 1) return null;
 
