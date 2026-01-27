@@ -2,6 +2,7 @@
 
 import { createUserAction } from '@/actions/user/create-user-action';
 import { Button } from '@/components/Forms/Button';
+import { HoneypotInput } from '@/components/Forms/HoneypotInput';
 import { InputText } from '@/components/Forms/InputText';
 import { PublicUserSchema } from '@/lib/user/schemas';
 import clsx from 'clsx';
@@ -66,6 +67,8 @@ export function CreateUserForm() {
           disabled={isPending}
           required
         />
+
+        <HoneypotInput />
 
         <Button disabled={isPending} type='submit' className='mt-4'>
           <UserRoundIcon />
