@@ -27,7 +27,6 @@ export async function LoginAction(state: LoginActionState, formData: FormData) {
     return {
       email: '',
       errors: ['nice'],
-      success: false,
     };
   }
 

@@ -2,7 +2,7 @@ export function HoneypotInput() {
   return (
     <input
       className='niceInput'
-      name='dateUpdateAt'
+      name='dateUpdatedAt'
       type='text'
       autoComplete='new-password'
       tabIndex={-1}
