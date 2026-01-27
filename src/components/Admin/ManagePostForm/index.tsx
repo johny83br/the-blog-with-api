@@ -6,11 +6,12 @@ import { InputText } from '@/components/Forms/InputText';
 import { MarkdownEditor } from '@/components/Forms/MarkdownEditor';
 import { ImageUploader } from '../../Forms/ImageUploader';
 import { useActionState, useEffect, useState } from 'react';
-import { makePartialPublicPost, PublicPost } from '@/dto/post/dto';
+import { PublicPost } from '@/dto/post/dto';
 import { CreatePostAction } from '@/actions/post/create-post-action';
 import { toast } from 'react-toastify';
 import { UpdatePostAction } from '@/actions/post/update-post-action';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { PublicPostForApiSchema } from '@/lib/post/schemas';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,7 +47,7 @@ export function ManagePostForm(props: ManagePostFormProps) {
   };
 
   const initialState = {
-    formState: makePartialPublicPost(publicPost),
+    formState: PublicPostForApiSchema.parse(publicPost || {}),
     errors: [],
   };
 
@@ -106,15 +107,6 @@ export function ManagePostForm(props: ManagePostFormProps) {
         />
 
         <InputText
-          labelText='Autor'
-          name='author'
-          placeholder='Digite o nome do autor'
-          type='text'
-          defaultValue={formState.author}
-          disabled={isPending}
-        />
-
-        <InputText
           labelText='Título'
           name='title'
           placeholder='Digite o título'
@@ -151,13 +143,15 @@ export function ManagePostForm(props: ManagePostFormProps) {
           disabled={isPending}
         />
 
-        <InputCheckbox
-          labelText='Publicar?'
-          name='published'
-          type='checkbox'
-          defaultChecked={formState.published}
-          disabled={isPending}
-        />
+        {mode === 'update' && (
+          <InputCheckbox
+            labelText='Publicar?'
+            name='published'
+            type='checkbox'
+            defaultChecked={formState.published}
+            disabled={isPending}
+          />
+        )}
 
         <div className='mt-8'>
           <Button type='submit' disabled={isPending}>
