@@ -1,40 +1,58 @@
 'use server';
 
-import { verifyLoginSession } from '@/lib/login/manage-login';
-import { postRepository } from '@/repositories/post';
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { getLoginSessionForApi } from '@/lib/login/manage-login';
+import { PublicPostForApiDto } from '@/lib/post/schemas';
+import { authenticatedApiRequest } from '@/utils/authenticated-api-request';
+import { revalidateTag } from 'next/cache';
 
 export async function DeletePostAction(id: string) {
-  const isAuthenticated = await verifyLoginSession();
+  const isAuthenticated = await getLoginSessionForApi();
 
   if (!isAuthenticated) {
     return {
-      error: 'Faça login em outra aba antes de apagar.',
+      error: 'Faça login novamente em outra aba',
     };
   }
 
   if (!id || typeof id !== 'string') {
-    throw new Error('ID do post inválido.');
+    return {
+      error: 'Dados inválidos',
+    };
   }
 
-  let post;
+  const postResponse = await authenticatedApiRequest<PublicPostForApiDto>(
+    `/post/me/${id}`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
 
-  try {
-    post = await postRepository.delete(id);
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      return {
-        error: error.message,
-      };
-    }
+  if (!postResponse.success) {
     return {
-      error: 'Erro desconhecido',
+      error: 'Erro ao encontrar post',
+    };
+  }
+
+  const deletePostResponse = await authenticatedApiRequest<PublicPostForApiDto>(
+    `/post/me/${id}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
+
+  if (!deletePostResponse.success) {
+    return {
+      error: 'Erro ao apagar post',
     };
   }
 
   revalidateTag('posts', 'seconds');
-  revalidateTag(`post-${post.slug}`, 'seconds');
-  revalidatePath('/admin/posts');
+  revalidateTag(`post-${postResponse.data.slug}`, 'seconds');
 
   return {
     error: '',
