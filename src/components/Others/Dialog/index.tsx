@@ -4,7 +4,7 @@ import { Button } from '../../Forms/Button';
 type DialogProps = {
   isVisible?: boolean;
   title: string;
-  content: string;
+  content: React.ReactNode;
   onCancel: () => void;
   onConfirm: () => void;
   disabled: boolean;
