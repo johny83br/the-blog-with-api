@@ -6,18 +6,20 @@ import { InputText } from '@/components/Forms/InputText';
 import { MarkdownEditor } from '@/components/Forms/MarkdownEditor';
 import { ImageUploader } from '../../Forms/ImageUploader';
 import { useActionState, useEffect, useState } from 'react';
-import { PublicPost } from '@/dto/post/dto';
 import { CreatePostAction } from '@/actions/post/create-post-action';
 import { toast } from 'react-toastify';
 import { UpdatePostAction } from '@/actions/post/update-post-action';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { PublicPostForApiSchema } from '@/lib/post/schemas';
+import {
+  PublicPostForApiDto,
+  PublicPostForApiSchema,
+} from '@/lib/post/schemas';
 
 export const dynamic = 'force-dynamic';
 
 type ManagePostFormUpdateProps = {
   mode: 'update';
-  publicPost: PublicPost;
+  publicPost: PublicPostForApiDto;
 };
 
 type ManagePostFormCreateProps = {
