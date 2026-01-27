@@ -27,6 +27,13 @@ const nextConfig: NextConfig = {
         search: '',
       },
       {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3001',
+        pathname: '/**',
+        search: '',
+      },
+      {
         protocol: 'https',
         hostname: 'labs.ninja.dev.br',
         pathname: '/**',

@@ -5,7 +5,9 @@ import {
   IMAGE_UPLOAD_DIRECTORY,
   IMAGE_UPLOAD_MAX_SIZE,
 } from '@/lib/constants';
-import { verifyLoginSession } from '@/lib/login/manage-login';
+import { getLoginSessionForApi } from '@/lib/login/manage-login';
+import { apiRequest } from '@/utils/api-request';
+import { authenticatedApiRequest } from '@/utils/authenticated-api-request';
 import { mkdir, writeFile } from 'fs/promises';
 import { extname, resolve } from 'path';
 
@@ -17,7 +19,7 @@ type UploadImageActionResult = {
 export async function UploadImageAction(
   formData: FormData,
 ): Promise<UploadImageActionResult> {
-  const isAuthenticated = await verifyLoginSession();
+  const isAuthenticated = await getLoginSessionForApi();
 
   const makeResult = ({ url = '', error = '' }) => ({ url, error });
 
@@ -43,25 +45,19 @@ export async function UploadImageAction(
     return makeResult({ error: 'Imagem inválida' });
   }
 
-  const imageExtension = extname(file.name);
-  const uniqueImageName = `${Date.now()}${imageExtension}`;
-
-  const uploadFullPath = resolve(
-    process.cwd(),
-    'public',
-    IMAGE_UPLOAD_DIRECTORY,
+  const uploadResponse = await authenticatedApiRequest<{ url: string }>(
+    `/upload`,
+    {
+      method: 'POST',
+      body: formData,
+    },
   );
-  await mkdir(uploadFullPath, { recursive: true });
 
-  const fileArrayBuffer = await file.arrayBuffer();
-  const buffer = Buffer.from(fileArrayBuffer);
+  if (!uploadResponse.success) {
+    return makeResult({ error: uploadResponse.errors[0] });
+  }
 
-  const fileFullPath = resolve(uploadFullPath, uniqueImageName);
+  const url = `${IMAGE_SERVER_URL}${uploadResponse.data.url}`;
 
-  await writeFile(fileFullPath, buffer);
-
-  return makeResult({
-    url: `${IMAGE_SERVER_URL}/${uniqueImageName}`,
-    error: '',
-  });
+  return makeResult({ url });
 }
