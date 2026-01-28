@@ -5,15 +5,21 @@ import { findAllPublicPostsApiCached } from '@/lib/post/queries/public';
 
 export async function PostFeatured() {
   const postsRes = await findAllPublicPostsApiCached();
+  const noPostsFound = (
+    <ErrorMessage
+      contentTitle='Ops 😅'
+      content='Ainda não criamos nenhum post.'
+    />
+  );
 
   if (!postsRes.success) {
-    return null;
+    return noPostsFound;
   }
 
   const posts = postsRes.data;
 
   if (posts.length <= 0) {
-    return null;
+    return noPostsFound;
   }
 
   const post = posts[0];
