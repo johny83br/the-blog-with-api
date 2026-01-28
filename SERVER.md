@@ -47,6 +47,7 @@ npm -g install npm@latest
 Comandos para iniciar o site do zero:
 
 ```sh
+cd theblog
 # Ter o node instalado
 # Instalar todos os pacotes
 npm i
@@ -153,7 +154,7 @@ pasta sites-enabled (é ela que ativa os sites):
 
 ```sh
 sudo rm /etc/nginx/sites-enabled/default # Apaga o site default que o nginx ativou
-sudo ln -s /etc/nginx/sites-available/lab.ninja.dev.br /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/labs.ninja.dev.br /etc/nginx/sites-enabled/
 sudo nginx -t # confere se está tudo certo
 sudo systemctl reload nginx
 ```
@@ -202,8 +203,28 @@ pm2 log theblog # veja o log do next (importante para debug)
 # O sqlite não lida muito bem cluster (várias instâncias do node rodando ao mesmo tempo)
 # mas se você trocar de base de dados, para postgreSQL, MySQL, etc, use os comandos abaixo:
 pm2 delete theblog # reinicia
+pm2 save --force
+pm2 unstartup
+pm2 save --force
 pm2 start npm --name theblog -- start -i max # modo cluster, 1 instância por core do processador
 pm2 save
+```
+
+### SSH Config
+
+```sh
+# Comando para gerar a chave
+ssh-keygen -t ed25519 -f ~/.ssh/github_novo
+
+nano ~/.ssh/config
+
+# Cole o trecho abaixo
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_novo
+  IdentitiesOnly yes
 ```
 
 Depoois de fazer todas as configurações, meu arquivo final do NGINX ficou assim:
