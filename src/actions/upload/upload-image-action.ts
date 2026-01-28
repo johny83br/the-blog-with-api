@@ -1,15 +1,8 @@
 'use server';
 
-import {
-  IMAGE_SERVER_URL,
-  IMAGE_UPLOAD_DIRECTORY,
-  IMAGE_UPLOAD_MAX_SIZE,
-} from '@/lib/constants';
+import { IMAGE_SERVER_URL, IMAGE_UPLOAD_MAX_SIZE } from '@/lib/constants';
 import { getLoginSessionForApi } from '@/lib/login/manage-login';
-import { apiRequest } from '@/utils/api-request';
 import { authenticatedApiRequest } from '@/utils/authenticated-api-request';
-import { mkdir, writeFile } from 'fs/promises';
-import { extname, resolve } from 'path';
 
 type UploadImageActionResult = {
   url: string;
