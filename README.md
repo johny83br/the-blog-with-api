@@ -1,53 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 The Blog
 
-## Getting Started
+Esse projeto é um **blog moderno com integração de API**
+([https://github.com/johny83br/the-blog-api](https://github.com/johny83br/the-blog-api)),
+construído em **Next.js** com TypeScript.
 
-First, run the development server:
+Ele serve como uma plataforma onde você pode ler posts, consumir dados de uma
+API e ter uma experiência de blog interativo e escalável.
+
+Um exemplo do projeto você pode acessar por esse endereço:
+[https://johny83br.github.io/blog-ssg-nextjs/](https://johny83br.github.io/blog-ssg-nextjs/).
+
+## 🚀 Sobre o Projeto
+
+O **The Blog** é uma aplicação web que demonstra como criar um blog completo
+usando:
+
+- **Next.js** como framework React para renderização híbrida (SSG/SSR/ISR)
+- **TypeScript** para tipagem forte e mais segurança no código
+- **Consumo de API** para obter dados de posts e conteúdo
+- Estrutura organizada para separar lógica de interface e de dados
+
+## 🧠 Funcionalidades
+
+- 📄 Exibição de posts de blog
+- 🔍 Consumo de dados via API
+- 🚀 Renderização rápida com Next.js
+- 🛠️ Pronto para desenvolvimento com **npm**
+- 💡 Tipagem com **TypeScript**
+
+## 🧩 Tecnologias Utilizadas
+
+| Tecnologia         | Finalidade                                                     |
+| ------------------ | -------------------------------------------------------------- |
+| **Next.js**        | Estrutura React para páginas e rotas                           |
+| **React**          | Biblioteca de interface                                        |
+| **TypeScript**     | Tipagem estática                                               |
+| **API REST**       | Fonte de dados para posts                                      |
+| **HTML & CSS**     | Marcação e estilo da interface                                 |
+| **nginx**          | Servidor web                                                   |
+| **pm2**            | Gerenciador de processos de Produção Node.js com Load Balancer |
+| **Github Actions** | Para CI/CD automatizando o desenvolvimento, teste, e entrega   |
+
+## ⚙️ Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/johny83br/the-blog-with-api.git
+cd the-blog-with-api
+npm install
+```
+
+## ▶️ Desenvolvimento
+
+Para rodar o projeto em modo de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+## 📦 Produção
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+Para executar o projeto em modo de produção:
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Estrutura Básica
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto possui a seguinte organização:
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
+```
+.
+├── public/               # Arquivos públicos (imagens, favicons etc.)
+├── src/                  # Código fonte principal
+│   ├── pages/            # Páginas do Next.js
+│   └── components/       # Componentes React reutilizáveis
+├── .env.example          # Variáveis de ambiente de exemplo
+├── package.json          # Dependências e scripts
+└── README.md             # Este arquivo
+```
 
-## Deploy on Vercel
+## 💡 Contribuição
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+Contribuições são sempre bem-vindas! Se quiser adicionar mais recursos como
+testes adicionais, abra uma _issue_ no repositório 😊
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+## 📄 Licença
 
-## Safety Information
-
-[How to Think About Security in Next.js](https://nextjs.org/blog/security-nextjs-server-components-actions)
+Esse projeto está aberto para uso e modificação (especifique a licença se quiser
+adicionar, por exemplo, MIT).
