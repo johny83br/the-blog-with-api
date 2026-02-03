@@ -30,16 +30,16 @@ usando:
 
 ## 🧩 Tecnologias Utilizadas
 
-| Tecnologia         | Finalidade                                                     |
-| ------------------ | -------------------------------------------------------------- |
-| **Next.js**        | Estrutura React para páginas e rotas                           |
-| **React**          | Biblioteca de interface                                        |
-| **TypeScript**     | Tipagem estática                                               |
-| **API REST**       | Fonte de dados para posts                                      |
-| **HTML & CSS**     | Marcação e estilo da interface                                 |
-| **nginx**          | Servidor web                                                   |
-| **pm2**            | Gerenciador de processos de Produção Node.js com Load Balancer |
-| **Github Actions** | Para CI/CD automatizando o desenvolvimento, teste, e entrega   |
+| Tecnologia                    | Finalidade                                                     |
+| ----------------------------- | -------------------------------------------------------------- |
+| **Next.js**                   | Estrutura React para páginas e rotas                           |
+| **React**                     | Biblioteca de interface                                        |
+| **TypeScript**                | Tipagem estática                                               |
+| **API REST**                  | Fonte de dados para posts                                      |
+| **HTML & CSS (Tailwind CSS)** | Marcação e estilo da interface                                 |
+| **nginx**                     | Servidor web                                                   |
+| **pm2**                       | Gerenciador de processos de Produção Node.js com Load Balancer |
+| **Github Actions**            | Para CI/CD automatizando o desenvolvimento, teste, e entrega   |
 
 ## ⚙️ Instalação
 
