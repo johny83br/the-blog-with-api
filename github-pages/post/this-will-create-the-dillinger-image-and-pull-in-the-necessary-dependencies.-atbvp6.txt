@@ -1,0 +1,138 @@
+1:"$Sreact.fragment"
+2:I[22016,["/blog-ssg-nextjs/_next/static/chunks/796e69ae18b2784c.js","/blog-ssg-nextjs/_next/static/chunks/baf0fef9b4e2a6f3.js"],""]
+3:I[39756,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+4:I[58298,["/blog-ssg-nextjs/_next/static/chunks/796e69ae18b2784c.js","/blog-ssg-nextjs/_next/static/chunks/28cae4a707421f39.js"],"default"]
+5:I[37457,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+7:I[97367,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+a:I[97367,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+c:I[97367,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+e:I[68027,[],"default"]
+:HL["/blog-ssg-nextjs/_next/static/chunks/61de449968b70a30.css","style"]
+0:{"P":null,"b":"egSYiHsVVnSMEXb7YJICa","c":["","post","this-will-create-the-dillinger-image-and-pull-in-the-necessary-dependencies.-atbvp6"],"q":"","i":false,"f":[[["",{"children":["post",{"children":[["slug","this-will-create-the-dillinger-image-and-pull-in-the-necessary-dependencies.-atbvp6","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/blog-ssg-nextjs/_next/static/chunks/61de449968b70a30.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/blog-ssg-nextjs/_next/static/chunks/796e69ae18b2784c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","className":"dark","children":["$","body",null,{"children":["$","div",null,{"className":"text-slate-900 bg-slate-100 min-h-screen","children":["$","div",null,{"className":"max-w-5xl mx-auto px-8","children":[["$","header",null,{"children":["$","h1",null,{"className":"text-4xl/normal font-extrabold py-8 sm:text-5xl/normal sm:py-10 md:text-6xl/normal md:py-11 lg:text-7xl/normal lg:py-12","children":["$","$L2",null,{"href":"/","children":"The Blog"}]}]}],["$","$L3",null,{"parallelRouterKey":"children","error":"$4","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/blog-ssg-nextjs/_next/static/chunks/28cae4a707421f39.js","async":true}]],"template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":["Página não encontrada"," | The Blog"]}],["$","div",null,{"className":"min-h-80 bg-slate-900 text-slate-100 mb-16 p-8 rounded-xl flex items-center justify-center text-center","children":["$","div",null,{"children":[["$","h1",null,{"className":"text-7xl/tight mb-4 font-extrabold","children":"Erro 404 😅"}],["$","p",null,{"children":"A página que você está tentando acessar não existe neste site."}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","footer",null,{"className":"pb-8 text-center","children":["$","p",null,{"children":[["$","span",null,{"children":["Copyright © ",2025," - "]}],["$","$L2",null,{"href":"/","children":"The Blog"}]]}]}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L6",[["$","script","script-0",{"src":"/blog-ssg-nextjs/_next/static/chunks/baf0fef9b4e2a6f3.js","async":true,"nonce":"$undefined"}]],["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$La",null,{"children":"$@b"}],["$","div",null,{"hidden":true,"children":["$","$Lc",null,{"children":["$","$8",null,{"name":"Next.Metadata","children":"$@d"}]}]}],null]}],false]],"m":"$undefined","G":["$e",[]],"S":true}
+6:["$","$8",null,{"fallback":["$","div",null,{"className":"flex items-center justify-center min-h-20 mb-16","children":["$","div",null,{"className":"w-10 h-10 border-5 border-t-transparent border-slate-900 rounded-full animate-spin"}]}],"children":"$Lf"}]
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+10:I[5500,["/blog-ssg-nextjs/_next/static/chunks/796e69ae18b2784c.js","/blog-ssg-nextjs/_next/static/chunks/baf0fef9b4e2a6f3.js"],"Image"]
+33:I[27201,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+f:["$","article",null,{"className":"mb-16","children":[["$","header",null,{"className":"group flex flex-col gap-4 mb-4","children":[["$","$L10",null,{"src":"/blog-ssg-nextjs/images/bryen_3.png","width":1200,"height":720,"alt":"This will create the dillinger image and pull in the necessary dependencies.","className":"rounded-xl"}],["$","h2",null,{"className":"text-2xl/tight font-bold","children":["$","$L2",null,{"className":"group-hover:text-slate-600 transition","href":"/post/this-will-create-the-dillinger-image-and-pull-in-the-necessary-dependencies.-atbvp6","children":"This will create the dillinger image and pull in the necessary dependencies."}]}],["$","p",null,{"children":["Luiz Otávio"," | ",["$","time",null,{"className":"text-slate-600 text-sm/tight","title":"há 9 meses","children":"04/04/2025 às 21:24"}]]}]]}],["$","p",null,{"className":"text-xl mb-4 text-slate-600 italic","children":"Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,"}],["$","div",null,{"className":"prose prose-slate w-full max-w-none overflow-hidden prose-a:transition prose-a:no-underline prose-a:text-blue-500 prose-a:hover:text-blue-700 prose-a:hover:underline prose-img:mx-auto lg:prose-lg","children":[["$","p","p-0",{"children":[["$","strong","strong-0",{"children":"Disclaimer:"}]," this API may change a lot since it is still under development. Feel free to help me to create the best boilerplate possible. My goal is to put at least an authentication system. CRUD operations for users, token and refresh tokens."]}],"\n",["$","h1","h1-0",{"children":"Clean Architecture API with TypeScript"}],"\n",["$","p","p-1",{"children":["This is my attempt to create an API with ",["$","a","a-0",{"href":"https://nodejs.org/en/","children":"node.js"}]," and ",["$","a","a-1",{"href":"https://www.typescriptlang.org/","children":"typescript"}]," following the principles of ",["$","a","a-2",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"clean architecture"}],". I'm using ",["$","a","a-3",{"href":"https://expressjs.com/pt-br/","children":"express.js"}],", but the idea is that you can replace it with any framework you want."]}],"\n",["$","p","p-2",{"children":["For data storage, I'm using ",["$","a","a-0",{"href":"http://knexjs.org/","children":"knex query builder"}],", so you can use Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon Redshift. Again, you can change the data storage with anything you want. You can create new repositories in ",["$","code","code-0",{"children":"src/infrastructure/repositories"}],". You can add NoSQL too if needed, but you'll have to create your own repository (I might create an example in the future)."]}],"\n",["$","p","p-3",{"children":["There's also another layer called \"common\" that you can use as a ",["$","a","a-0",{"href":"https://en.wikipedia.org/wiki/Cross-cutting_concern","children":"cross-cutting concern"}]," layer. In this layer, you may add things that can be used in all other layers, as validations and helpers."]}],"\n",["$","p","p-4",{"children":["Read more about clean architecture in ",["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"this article"}],"."]}],"\n",["$","h2","h2-0",{"children":"Clean Architecture Layers"}],"\n",["$","p","p-5",{"children":"The folder structure may change in the future, but currently we have that:"}],"\n",["$","h3","h3-0",{"children":"domain layer"}],"\n",["$","p","p-6",{"children":"This is the \"domain\" or \"entities\" layer. Here's the description by Uncle Bob:"}],"\n",["$","p","p-7",{"children":["> Entities encapsulate Enterprise wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions. It doesn’t matter so long as the entities could be used by many different applications in the enterprise.\r\n>\r\n> If you don’t have an enterprise, and are just writing a single application, then these entities are the business objects of the application. They encapsulate the most general and high-level rules. They are the least likely to change when something external changes. For example, you would not expect these objects to be affected by a change to page navigation, or security. No operational change to any particular application should affect the entity layer. (","$L11",")"]}],"\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32"]}]]}]
+d:[["$","title","0",{"children":"This will create the dillinger image and pull in the necessary dependencies. | The Blog"}],["$","meta","1",{"name":"description","content":"Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,"}],["$","link","2",{"rel":"icon","href":"/blog-ssg-nextjs/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L33","3",{}]]
+9:null
+:HL["https://raw.githubusercontent.com/luizomf/clean-architecture-api-boilerplate/master/docs/clean-architecture.png","image"]
+11:["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"Read the source"}]
+12:["$","h3","h3-1",{"children":"application layer"}]
+13:["$","p","p-8",{"children":["This is the ",["$","strong","strong-0",{"children":"\"Use Cases\""}]," layer. Here you may add the application ",["$","strong","strong-1",{"children":"Use cases"}],". Here's the description by Uncle Bob:"]}]
+14:["$","p","p-9",{"children":[">The software in this layer contains application specific business rules. It encapsulates and implements all of the use cases of the system. These use cases orchestrate the flow of data to and from the entities, and direct those entities to use their enterprise wide business rules to achieve the goals of the use case.\r\n>\r\n>We do not expect changes in this layer to affect the entities. We also do not expect this layer to be affected by changes to externalities such as the database, the UI, or any of the common frameworks. This layer is isolated from such concerns.\r\n>\r\n>We do, however, expect that changes to the operation of the application will affect the use-cases and therefore the software in this layer. If the details of a use-case change, then some code in this layer will certainly be affected. (",["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"Read the source"}],")"]}]
+15:["$","h3","h3-2",{"children":"adapters (presentation) layer"}]
+16:["$","p","p-10",{"children":"This is the \"Interface Adapters\" layer. I don't really like that name, because I think it's confusing (it's now called presentation). The behavior of software in this layer is not the same as the \"Adapter\" design pattern by Gof, as it must not depend on external layers."}]
+17:["$","p","p-11",{"children":["I'm using the name ",["$","strong","strong-0",{"children":"\"Presentation\""}]," for this layer."]}]
+18:["$","p","p-12",{"children":"Here's the description by Uncle Bob:"}]
+34:T48c,> The software in this layer is a set of adapters that convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web. It is this layer, for example, that will wholly contain the MVC architecture of a GUI. The Presenters, Views, and Controllers all belong in here. The models are likely just data structures that are passed from the controllers to the use cases, and then back from the use cases to the presenters and views.
+>
+> Similarly, data is converted, in this layer, from the form most convenient for entities and use cases, into the form most convenient for whatever persistence framework is being used. i.e. The Database. No code inward of this circle should know anything at all about the database. If the database is a SQL database, then all the SQL should be restricted to this layer, and in particular to the parts of this layer that have to do with the database.
+>
+> Also in this layer is any other adapter necessary to convert data from some external form, such as an external service, to the internal form used by the use cases and entities. (19:["$","p","p-13",{"children":["$34",["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"Read the source"}],")"]}]
+1a:["$","h3","h3-3",{"children":"infrastructure layer"}]
+1b:["$","p","p-14",{"children":["This folder (layer) is where we add everything related to external \"",["$","strong","strong-0",{"children":"Frameworks and Drivers"}],"\". Here you can add the repositories, external frameworks, web and so on."]}]
+1c:["$","p","p-15",{"children":"Here's the description by Uncle Bob:"}]
+1d:["$","p","p-16",{"children":[">The outermost layer is generally composed of frameworks and tools such as the Database, the Web Framework, etc. Generally you don’t write much code in this layer other than glue code that communicates to the next circle inwards.\r\n>\r\n>This layer is where all the details go. The Web is a detail. The database is a detail. We keep these things on the outside where they can do little harm. (",["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"Read the source"}],")"]}]
+1e:["$","h3","h3-4",{"children":"main layer"}]
+1f:["$","p","p-17",{"children":"This layer is where we put everything together. It's the \"dirty layer\", because most factories will be here. It may depend on all other layers in the system."}]
+20:["$","h2","h2-1",{"children":"Clean Architecture visual guide"}]
+21:["$","p","p-18",{"children":"Here is a visual guide that may help you:"}]
+22:["$","p","p-19",{"children":["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":["$","img","img-0",{"src":"https://raw.githubusercontent.com/luizomf/clean-architecture-api-boilerplate/master/docs/clean-architecture.png","alt":"Clean Architecture - By Uncle Bob"}]}]}]
+23:["$","p","p-20",{"children":"Notice the \"Dependency rule\" (the arrows pointing inwards to the Entities). Here's the description of this rule:"}]
+24:["$","p","p-21",{"children":["> ## The Dependency Rule\r\n>The concentric circles represent different areas of software. In general, the further in you go, the higher level the software becomes. The outer circles are mechanisms. The inner circles are policies.\r\n>\r\n>The overriding rule that makes this architecture work is The Dependency Rule. This rule says that source code dependencies can only point inwards. Nothing in an inner circle can know anything at all about something in an outer circle. In particular, the name of something declared in an outer circle must not be mentioned by the code in the an inner circle. That includes, functions, classes. variables, or any other named software entity.\r\n>\r\n>By the same token, data formats used in an outer circle should not be used by an inner circle, especially if those formats are generate by a framework in an outer circle. We don’t want anything in an outer circle to impact the inner circles. (",["$","a","a-0",{"href":"https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html","children":"Read the source"}],")"]}]
+25:["$","p","p-22",{"children":"In our case, data enter the system via \"express routes\" (infrastructure layer) to the \"controllers\" (adapters layer), to the \"use cases\" (application layer), to the \"domain\" (domain/entities layer). Then the system outputs via \"domain\" -> \"use cases\" -> \"presentation\" -> \"infrastructure\". I'm using the \"main\" layer to create factories for \"middlewares\", and \"controllers\" (and possibly other factories)."}]
+26:["$","h2","h2-2",{"children":"Folder Structure in detail"}]
+27:["$","p","p-23",{"children":[["$","strong","strong-0",{"children":"Disclaimer"}]," - I'm currently developing this software and I may not keep changing this README. But it's good for you to see how the application is evolving."]}]
+35:T10dc,src - ROOT
+├── application - Application or Use cases layer
+│   ├── errors - Errors only
+│   ├── ports - Interfaces for everything the use cases need
+│   │   ├── controllers - Interfaces for controllers
+│   │   ├── middlewares - Interfaces for middlewares
+│   │   ├── repositories - Interfaces for repositories
+│   │   │   ├── token - Interfaces for token repositories
+│   │   │   └── user - Interfaces for user repositories
+│   │   ├── requests - Interfaces for requests
+│   │   ├── responses - Interfaces for responses
+│   │   ├── sanitizers - Interfaces for sanitizers
+│   │   ├── security - Interfaces for everything security
+│   │   └── validation - Interfaces for validations
+│   ├── use-cases - Concrete use cases
+│   │   ├── sign-in - Sign-in use cases
+│   │   ├── token - Token use cases
+│   │   └── user - User use cases
+│   └── validation - Concrete validations
+│       ├── common - Common validations
+│       │   └── leaf - Concrete Validations (single)
+│       ├── sign-in - Sign-in validations
+│       │   └── composite - Composite sign-in validations
+│       └── user - User validations
+│           ├── composite - Composite user validations
+│           └── leaf - Concrete user validations (single)
+├── common - Cross cutting concerns layer
+│   ├── adapters - Adapters for external services and libs
+│   │   ├── sanitizers - Sanitizers adapters
+│   │   │   └── generic - Generic sanitizers
+│   │   ├── security - Security Adapters
+│   │   └── validators - Validators Adapters
+│   └── helpers - Helper functions
+│       ├── date - date related helper functions
+│       ├── numbers - number related helper functions
+│       ├── objects - objects related helper functions
+│       └── strings - strings related helper functions
+├── domain - Domain Layer
+│   ├── models - All models
+│   │   ├── role - User role models
+│   │   ├── sign-in - Sign-in models
+│   │   ├── token - Token models
+│   │   └── user - User models
+│   └── use-cases - Interfaces for use cases
+│       ├── sign-in - Interfaces for sign-in use cases
+│       ├── token - Interfaces for token use cases
+│       └── user - Interfaces for user use cases
+├── infrastructure - Infrastructure layer
+│   ├── express - Everything express related
+│   │   ├── adapters - Express adapters
+│   │   ├── middlewares - Express middlewares
+│   │   ├── routes - Express routes
+│   │   └── setup - Express setup functions
+│   ├── knex - Everything knex related
+│   │   ├── migrations - migrations
+│   │   └── seeds - seeds
+│   └── repositories - Repositories implementations
+│       ├── token - Token repositories
+│       │   └── sql - SQL Token repositories
+│       └── user - User repositories
+│           └── sql - SQL user repositories
+│               ├── helpers - helper functions
+│               ├── models - models
+│               └── repositories - repositories
+├── main - Main layer
+│   └── factories - factories to put everything together
+│       ├── controllers - Controller factories
+│       │   ├── sign-in - Sign-in factories
+│       │   ├── token - Token factories
+│       │   └── user - user factories
+│       └── middlewares - application specific middlewares
+│           └── authentication - authentication middlewares
+└── presentation - Presentation layer
+    ├── controllers - Concrete controllers
+    │   ├── sign-in - Sign-in controller
+    │   ├── token - Token controller
+    │   └── user - User controller
+    ├── middlewares - Concrete application specific middlewares
+    │   └── authentication - Authentication middlewares
+    └── responses - Response classes
+28:["$","pre","pre-0",{"children":["$","code","code-0",{"children":"$35"}]}]
+29:["$","h2","h2-3",{"children":"The \"User\" model"}]
+2a:["$","p","p-24",{"children":"You may notice I created crud operations for a user, added roles, token, refreshTokens and a way to sign-in. You can change it the way you want. I'm adding things on my free time."}]
+2b:["$","h2","h2-4",{"children":"Todo"}]
+2c:["$","ul","ul-0",{"className":"contains-task-list","children":["\n",["$","li","li-0",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Create CRUD operations for \"user\""]}],"\n",["$","li","li-1",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Create sign-in system with token and refresh token"]}],"\n",["$","li","li-2",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Add authorization token to user routes (except \"create\")"]}],"\n",["$","li","li-3",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Create \"roles\" to allow or disallow access to any route"]}],"\n",["$","li","li-4",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Change user routes to allow \"Admin\" role and owner to access route"]}],"\n",["$","li","li-5",{"className":"task-list-item","children":[["$","input","input-0",{"type":"checkbox","checked":true,"disabled":true}]," ","Create a refresh token route to allow regenerate tokens via refresh token"]}],"\n"]}]
+2d:["$","h1","h1-1",{"children":"Routes"}]
+2e:["$","p","p-25",{"children":"Here are routes I already created:"}]
+2f:["$","h3","h3-5",{"children":"Users"}]
+30:["$","div","table-0",{"className":"overflow-x-auto","children":["$","table",null,{"className":"w-full min-w-[600px]","children":[["$","thead","thead-0",{"children":["$","tr","tr-0",{"children":[["$","th","th-0",{"children":["$","code","code-0",{"children":"/users"}]}],["$","th","th-1",{}],["$","th","th-2",{}],["$","th","th-3",{}]]}]}],["$","tbody","tbody-0",{"children":[["$","tr","tr-0",{"children":[["$","td","td-0",{"children":["$","strong","strong-0",{"children":"Method"}]}],["$","td","td-1",{"children":["$","strong","strong-0",{"children":"Route"}]}],["$","td","td-2",{"children":["$","strong","strong-0",{"children":"Description"}]}],["$","td","td-3",{}]]}],["$","tr","tr-1",{"children":[["$","td","td-0",{"children":"GET"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/users/:id"}]}],["$","td","td-2",{"children":"get one user"}],["$","td","td-3",{}]]}],["$","tr","tr-2",{"children":[["$","td","td-0",{"children":"GET"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/users"}]}],["$","td","td-2",{"children":"get all users"}],["$","td","td-3",{}]]}],["$","tr","tr-3",{"children":[["$","td","td-0",{"children":"DELETE"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/users/:id"}]}],["$","td","td-2",{"children":"delete one user"}],["$","td","td-3",{}]]}],["$","tr","tr-4",{"children":[["$","td","td-0",{"children":"PUT"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/users/:id"}]}],["$","td","td-2",{"children":"update one user"}],["$","td","td-3",{}]]}],["$","tr","tr-5",{"children":[["$","td","td-0",{"children":"POST"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/users"}]}],["$","td","td-2",{"children":"create one user"}],["$","td","td-3",{}]]}]]}]]}]}]
+31:["$","h3","h3-6",{"children":"Sign-in"}]
+32:["$","div","table-1",{"className":"overflow-x-auto","children":["$","table",null,{"className":"w-full min-w-[600px]","children":[["$","thead","thead-0",{"children":["$","tr","tr-0",{"children":[["$","th","th-0",{"children":["$","code","code-0",{"children":"/sign-in"}]}],["$","th","th-1",{}],["$","th","th-2",{}],["$","th","th-3",{}]]}]}],["$","tbody","tbody-0",{"children":[["$","tr","tr-0",{"children":[["$","td","td-0",{"children":["$","strong","strong-0",{"children":"Method"}]}],["$","td","td-1",{"children":["$","strong","strong-0",{"children":"Route"}]}],["$","td","td-2",{"children":["$","strong","strong-0",{"children":"Description"}]}],["$","td","td-3",{}]]}],["$","tr","tr-1",{"children":[["$","td","td-0",{"children":"POST"}],["$","td","td-1",{"children":["$","code","code-0",{"children":"/sign-in"}]}],["$","td","td-2",{"children":"return token and refresh token for a user"}],["$","td","td-3",{}]]}]]}]]}]}]

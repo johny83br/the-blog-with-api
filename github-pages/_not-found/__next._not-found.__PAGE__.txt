@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/blog-ssg-nextjs/_next/static/chunks/ff1a16fafef87110.js","/blog-ssg-nextjs/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"buildId":"egSYiHsVVnSMEXb7YJICa","rsc":["$","$1","c",{"children":[[["$","title",null,{"children":["Página não encontrada"," | The Blog"]}],["$","div",null,{"className":"min-h-80 bg-slate-900 text-slate-100 mb-16 p-8 rounded-xl flex items-center justify-center text-center","children":["$","div",null,{"children":[["$","h1",null,{"className":"text-7xl/tight mb-4 font-extrabold","children":"Erro 404 😅"}],["$","p",null,{"children":"A página que você está tentando acessar não existe neste site."}]]}]}]],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
+4:null
